@@ -29,3 +29,7 @@
 echo "Hola Logstash" | /opt/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
 
 sudo ./filebeat -e -c filebeat.yml -d "publish"
+
+/opt/logstash/bin/logstash -f Filebeat/logstash-filebeat.conf
+
+
