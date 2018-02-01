@@ -12,4 +12,3 @@ logstash-tutorial.log
 sudo ./filebeat -e -c filebeat.yml -d "publish"
 
 /opt/logstash/bin/logstash -f Filebeat/logstash-filebeat.conf
-
