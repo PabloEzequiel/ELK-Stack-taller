@@ -1,4 +1,4 @@
-## Ejemplos de Logstash ##
+## Ejemplos de Logstash 
 
 ** Objetivos **
 
@@ -13,8 +13,15 @@
 
 
 
-RESOURCES: (PC PABLO)
+## RESOURCES: (PC PABLO)
 
     - /Users/pabloinchausti/Desktop/DevOps/code/github/_Public/elastic
     
 
+## COMANDOS:
+
+
+## PASO #02
+
+
+/opt/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
