@@ -30,6 +30,6 @@ echo "Hola Logstash" | /opt/logstash/bin/logstash -e 'input { stdin { } } output
 
 sudo ./filebeat -e -c filebeat.yml -d "publish"
 
-/opt/logstash/bin/logstash -f Filebeat/logstash-filebeat.conf
+/opt/logstash/bin/logstash -f ${ELK_STACK_TALK_HOME}/Filebeat/logstash-filebeat.conf
 
 

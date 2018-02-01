@@ -10,4 +10,6 @@ https://grokdebug.herokuapp.com/
 # https://clouding.io/kb/filtros-para-logstash/
 
 
-/opt/logstash/bin/logstash -f Grock/logstash-01-BuenosAires-2009-2017.conf
+/opt/logstash/bin/logstash -f ${ELK_STACK_TALK_HOME}/Grock/logstash-01-BuenosAires-2009-2017.conf
+
+
