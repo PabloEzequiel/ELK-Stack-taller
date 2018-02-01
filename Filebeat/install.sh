@@ -10,4 +10,10 @@ sudo apt-get update && sudo apt-get install filebeat
 sudo cp /etc/filebeat/filebeat.yml ./filebeat.yml.orig
 sudo cp ./filebeat.yml /etc/filebeat/filebeat.yml
 
+echo "_______________________________________"
+echo "filebeat.yml"
+echo "_______________________________________"
+
 sudo cat /etc/filebeat/filebeat.yml
+
+echo "_______________________________________"

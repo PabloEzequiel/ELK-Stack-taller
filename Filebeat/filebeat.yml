@@ -4,3 +4,4 @@ filebeat.prospectors:
     - /home/ninja/github/ELK-Stack/Data/02-Apache-log/logstash-tutorial.log
 output.logstash:
   hosts: ["localhost:5044"]
+
