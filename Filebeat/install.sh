@@ -7,6 +7,6 @@ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee 
 sudo apt-get update && sudo apt-get install filebeat
 
 
-sudo cp /etc/filebeat/filebeat.yml ./filebeat.yml.original
+sudo cp /etc/filebeat/filebeat.yml ./filebeat.yml.orig
 sudo cp ./filebeat.yml /etc/filebeat/filebeat.yml
 
