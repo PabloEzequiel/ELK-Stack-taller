@@ -58,23 +58,39 @@ curl -XPUT 'localhost:9200/my-twitter/tweet/3?pretty' -H 'Content-Type: applicat
 Podemos consultar (Por GET) no solamente los docuemntos que se insertaron sino también la información del índice. 
 
 ```
-
 (GET)  http://localhost:9200/my-twitter/_count   
 (GET)  http://localhost:9200/my-twitter/
 (GET)  http://localhost:9200/my-twitter/tweet/3?pretty 
-
 ```
 
 ### 2.2.3 Index API (POST para Update)
 
+```
 curl -XPOST 'localhost:9200/twitter/tweet/3/_update?pretty' -H 'Content-Type: application/json' -d'
 {
-
-
-    "script" : "ctx._source.new_field = \"que pasa\", ctx._source.new_field2 = \"value_of_new_field2\", "
-    
+    "script" : "ctx._source.new_field = \"que pasa\""   
 }
 '
+```
+
+En kibana, otro ejemplo, para despues poder aplicar filtros por edades:
+
+```
+POST /twitter/tweet/1/_update?pretty
+{
+    "script" : "ctx._source.edad = 48" 
+}
+
+POST /twitter/tweet/2/_update?pretty
+{
+    "script" : "ctx._source.edad = 32" 
+}
+
+POST /twitter/tweet/3/_update?pretty
+{
+    "script" : "ctx._source.edad = 16" 
+}
+```
 
 ## 2.3 Search API
 
@@ -120,9 +136,28 @@ GET /_search/template?pretty
 
 ```
 
+### 2.3.4 Search API - Filtering
+
+```
+GET /twitter/_search?pretty
+{
+    "query": {
+        "bool": {
+            "filter" : {
+                "range": {
+                    "edad": {
+                        "gte": 20,
+                        "lte": 50
+                    }
+                } 
+            }
+        }
+    }
+}
+```
 
 
-### 2.4 Query DSL
+# 2.4 Query DSL
 
 
 ```
