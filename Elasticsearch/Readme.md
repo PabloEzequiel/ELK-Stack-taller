@@ -217,11 +217,17 @@ GET /twitter/_search?pretty
 ```
 GET /my-twitter/_mapping/tweet?pretty
 GET stock-apple-v3/_mapping 
-
 ```
 
+# 2.5 CAT API
 
+```
+GET _cat/indices
+GET _cat/indices?v
+GET _cat/indices?v&s=pri:desc
+GET _cat/indices?help
 
-
+GET _cat/
+```
 
 
