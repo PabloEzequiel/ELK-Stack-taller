@@ -187,6 +187,26 @@ GET /twitter/_search?pretty
 }
 
 
+# match  vs match_phrase
+
+GET /twitter/_search?pretty
+{
+    "query": {
+        "match" : {
+            "user": "Meteoro Rocky"
+        }
+    }
+}
+
+GET /twitter/_search?pretty
+{
+    "query": {
+        "match_phrase" : {
+            "message": "Tweet1 (Rocky)"
+        }
+    }
+}
+
 ```
 
 ## 2.4 Indices API
