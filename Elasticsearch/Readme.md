@@ -1,7 +1,9 @@
-## Elasticsearch talk
+# Elasticsearch Search API Example
 
-# 2. Elasticsearch API REST
-## 2.1 Cluster API
+
+
+## 2. Elasticsearch API REST
+### 2.1 Cluster API
 
 ```
             http://localhost:9200/_cluster/health?pretty
@@ -9,23 +11,23 @@ curl -XGET 'http://localhost:9200/_cluster/health?pretty'
 
 ```
 
-## 2.1.2 Cluster Stats
+### 2.1.2 Cluster Stats
 
 ```
             http://localhost:9200/_cluster/stats?human&pretty
 curl -XGET 'http://localhost:9200/_cluster/stats?human&pretty'
 ```
 
-## 2.1.3 Nodes Stats
+### 2.1.3 Nodes Stats
 
 ```
             http://localhost:9200/_nodes?pretty
 curl -XGET 'http://localhost:9200/_nodes?pretty'
 ```
 
-# 2.2 Document API
+## 2.2 Document API
 
-## 2.2.1 Index API (PUT, GET)
+### 2.2.1 Index API (PUT, GET)
 
 ```
 curl -XPUT 'localhost:9200/my-twitter/tweet/1?pretty' -H 'Content-Type: application/json' -d'
@@ -63,7 +65,7 @@ Podemos consultar (Por GET) no solamente los docuemntos que se insertaron sino t
 
 ```
 
-## 2.2.3 Index API (POST para Update)
+### 2.2.3 Index API (POST para Update)
 
 curl -XPOST 'localhost:9200/twitter/tweet/3/_update?pretty' -H 'Content-Type: application/json' -d'
 {
@@ -74,9 +76,9 @@ curl -XPOST 'localhost:9200/twitter/tweet/3/_update?pretty' -H 'Content-Type: ap
 }
 '
 
-# 2.3 Search API
+## 2.3 Search API
 
-## 2.3.1 Search API - query params
+### 2.3.1 Search API - query params
 
 ```
 
@@ -87,7 +89,7 @@ curl -XGET ‘localhost:9200/twitter/_search?q=user:Meteoro&pretty'
 curl -XGET ‘localhost:9200/_search?q=new_field:value_of_new_field&pretty'
 ```
 
-## 2.3.2 Search API - query body
+### 2.3.2 Search API - query body
 
 ```
 curl -XGET 'localhost:9200/my-twitter/tweet/_search?pretty' -H 'Content-Type: application/json' -d'
@@ -99,7 +101,7 @@ curl -XGET 'localhost:9200/my-twitter/tweet/_search?pretty' -H 'Content-Type: ap
 '
 ```
 
-## 2.3.3 Search API - Templates
+### 2.3.3 Search API - Templates
 
 ```
 GET /_search/template?pretty
@@ -120,7 +122,7 @@ GET /_search/template?pretty
 
 
 
-## 2.4 Query DSL
+### 2.4 Query DSL
 
 
 ```
@@ -152,10 +154,10 @@ GET /twitter/_search?pretty
 
 ```
 
-# 2.4 Indices API
+## 2.4 Indices API
 
 
-## 2.4.1 Get Mapping
+## 2.4.1 Get Mapping
 
 ```
 GET /my-twitter/_mapping/tweet?pretty
