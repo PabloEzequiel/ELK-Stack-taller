@@ -230,4 +230,5 @@ GET _cat/indices?help
 GET _cat/
 ```
 
+Sobre _cat api: https://feryn.eu/blog/the-elasticsearch-cat-apis/
 
