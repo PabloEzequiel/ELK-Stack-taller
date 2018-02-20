@@ -46,3 +46,13 @@ PUT apache_logs_v1
 
 ...
 
+
+
+NOTA:
+
+Otro ejercicio sobre apache log:
+GEO IP BASADO EN:
+
+https://www.elastic.co/blog/geoip-in-the-elastic-stack
+Basado en la version 5 (Cloud) de elastic... 
+
