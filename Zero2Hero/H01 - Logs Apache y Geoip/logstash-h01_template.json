@@ -1,0 +1,45 @@
+{
+  "index_patterns": "apache_logs_v11",
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "mapping": {
+      "total_fields": {
+        "limit": "10000"
+      }
+    }
+  },
+  "mappings": {
+
+    "docs": {
+
+      "properties": {
+
+        "geoip": {
+          "properties": {
+              "coordinates": {
+                "type": "geo_point"
+              }
+           }
+         }
+
+      },
+
+      "dynamic_templates": [
+        {
+          "string_template": {
+            "match": "*",
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        }
+      ]
+
+
+    }
+
+
+  }
+}
