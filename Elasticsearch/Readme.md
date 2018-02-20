@@ -66,7 +66,7 @@ Podemos consultar (Por GET) no solamente los docuemntos que se insertaron sino t
 ### 2.2.3 Index API (POST para Update)
 
 ```
-curl -XPOST 'localhost:9200/twitter/tweet/3/_update?pretty' -H 'Content-Type: application/json' -d'
+curl -XPOST 'localhost:9200/my-twitter/tweet/3/_update?pretty' -H 'Content-Type: application/json' -d'
 {
     "script" : "ctx._source.new_field = \"que pasa\""   
 }
@@ -76,17 +76,17 @@ curl -XPOST 'localhost:9200/twitter/tweet/3/_update?pretty' -H 'Content-Type: ap
 En kibana, otro ejemplo, para despues poder aplicar filtros por edades:
 
 ```
-POST /twitter/tweet/1/_update?pretty
+POST /my-twitter/tweet/1/_update?pretty
 {
     "script" : "ctx._source.edad = 48" 
 }
 
-POST /twitter/tweet/2/_update?pretty
+POST /my-twitter/tweet/2/_update?pretty
 {
     "script" : "ctx._source.edad = 32" 
 }
 
-POST /twitter/tweet/3/_update?pretty
+POST /my-twitter/tweet/3/_update?pretty
 {
     "script" : "ctx._source.edad = 16" 
 }
@@ -98,10 +98,10 @@ POST /twitter/tweet/3/_update?pretty
 
 ```
 
-http://localhost:9200/twitter/_search?q=user:Meteoro&pretty
+http://localhost:9200/my-twitter/_search?q=user:Meteoro&pretty
 http://localhost:9200/_search?q=user:Meteoro&pretty
 
-curl -XGET ‘localhost:9200/twitter/_search?q=user:Meteoro&pretty'
+curl -XGET ‘localhost:9200/my-twitter/_search?q=user:Meteoro&pretty'
 curl -XGET ‘localhost:9200/_search?q=new_field:value_of_new_field&pretty'
 ```
 
@@ -139,7 +139,7 @@ GET /_search/template?pretty
 ### 2.3.4 Search API - Filtering
 
 ```
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "bool": {
@@ -161,14 +161,14 @@ GET /twitter/_search?pretty
 
 
 ```
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "match_all" : {      }
     }
 }
 
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "match" : {
@@ -177,7 +177,7 @@ GET /twitter/_search?pretty
     }
 }
 
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "regexp":{
@@ -189,7 +189,7 @@ GET /twitter/_search?pretty
 
 # match  vs match_phrase
 
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "match" : {
@@ -198,7 +198,7 @@ GET /twitter/_search?pretty
     }
 }
 
-GET /twitter/_search?pretty
+GET /my-twitter/_search?pretty
 {
     "query": {
         "match_phrase" : {
