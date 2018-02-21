@@ -56,3 +56,30 @@ GEO IP BASADO EN:
 https://www.elastic.co/blog/geoip-in-the-elastic-stack
 Basado en la version 5 (Cloud) de elastic... 
 
+
+
+........
+
+NOTA: 
+En las máquinas de las Ninja no envia los datos a Elastic Cloud ..
+
+.... 7
+
+Además la configuración del logstash de mi github no
+impacta OK en el elastic local ...
+
+....
+
+Posibilidades:
+    a) Utilizar todo Cloud ... con un único Logstash OK en una PC
+       (Tiene que ser una Ninja por el Proyector asi se muestra la ingestion)
+    b) Actualizar todas las PC ...
+
+........
+
+NOTA: 2018-02-21
+A) Reinstale logstash a la ultima version ...
+b) Creo que lo instale en algun lado con sudo, aunque no lo recuerdo
+c) para ejecutarlo, hay que ejecutar sudo ./run.sh
+e) Si se ejecuta con sudo, no ve a las variables configuradas con ${}
+f) Si no se ejecuta con sudo ... tiene permiso denegado para ejecutar ...

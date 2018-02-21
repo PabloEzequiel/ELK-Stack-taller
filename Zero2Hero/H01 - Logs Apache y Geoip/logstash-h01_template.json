@@ -1,5 +1,5 @@
 {
-  "index_patterns": "apache_logs_v11",
+  "index_patterns": "apache_logs_v12",
   "settings": {
     "number_of_shards": 1,
     "number_of_replicas": 0,
